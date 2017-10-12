@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Add a blog post</h1>
+    <form method='post'>
+        <label>
+            New Blog Title:
+            <input type="text" name='title' />
+        </label>
+        {% if title_error %}
+            <p class="error">
+                {{title_error}}
+            </p>
+        {% endif %}
+        <br>
+        <label>
+            New Blog:
+            <input type="text" name='body' />
+        </label>
+        {% if body_error %}
+            <p class="error">
+                {{body_error}}
+            </p>
+        {% endif %}
+        <br>
+        <input type="submit" value='Add Post' />
+    </form>
+
+{% endblock %}
